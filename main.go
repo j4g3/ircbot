@@ -81,10 +81,10 @@ func api(name string, target interface{}) error {
 }
 
 func login(conn net.Conn) {
-	sendData(conn, "USER testeh43 8 * :Someone")
-	sendData(conn, "NICK testeh43")
-	sendData(conn, "JOIN #j4g3test")
-	sendData(conn, "PRIVMSG #j4g3test :Aoba bão ?")
+	sendData(conn, "USER github-bot-top 8 * :Someone")
+	sendData(conn, "NICK github-bot-top")
+	sendData(conn, "JOIN #chat-top")
+	sendData(conn, "PRIVMSG #chat-top :Aoba bão ?")
 
 }
 
@@ -95,7 +95,7 @@ func pong(conn net.Conn) {
 func github(conn net.Conn, gitname string) {
 	data := new(Github)
 	api(gitname, &data)
-	sendData(conn, "PRIVMSG #j4g3test :Nome do github é "+data.Name)
+	sendData(conn, "PRIVMSG #chat-top :Nome do github é "+data.Name)
 }
 
 func command(conn net.Conn, message string) {
